@@ -1,0 +1,69 @@
+header
+    .navbar
+        padding: 50px 0
+        .navbar-collapse
+            justify-content: space-between
+            .navbar-brand
+                width: 167px
+            .navbar-nav
+                padding: 17px 24px
+                gap: 32px
+                box-sizing: border-box
+                background: #FFFFFF
+                border: 1px solid #D9DBE9
+                border-radius: 100px
+                .nav-item
+                    position: relative
+                    .nav-link
+                        font-weight: 400
+                        font-size: 17px
+                        letter-spacing: -0.4px
+                        color: #000000
+                .nav-item + .nav-item
+                    &::after
+                        position: absolute
+                        top: 50%
+                        left: -18px
+                        transform: translateY(-50%)
+                        content: ''
+                        width: 6px
+                        height: 6px
+                        border-radius: 50%
+                        background: #D9DBE9
+            .nav-button
+                .suport
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    padding: 6px 16px
+                    gap: 16px
+                    width: 56px
+                    height: 56px
+                    background: #FFFFFF
+                    border: 2px solid #000000
+                    border-radius: 50%
+                    box-sizing: border-box
+                    transition: all ease-in-out .3s
+                    @media screen and ( min-width: 1025px )
+                        &:hover
+                            background: #000000
+                            img
+                                filter: grayscale(100%)
+                .download-app
+                    padding: 16px 24px
+                    gap: 16px
+                    width: 152px
+                    height: 56px
+                    background: #F7C913
+                    border-radius: 32px
+                    margin-left: 8px
+                    transition: all ease-in-out .3s
+                    span
+                        font-weight: 600
+                        font-size: 17px
+                        text-align: center
+                        letter-spacing: -0.4px
+                        color: #000000
+                    @media screen and ( min-width: 1025px )
+                        &:hover
+                            background: #D1A300

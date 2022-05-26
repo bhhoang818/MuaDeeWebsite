@@ -1,0 +1,627 @@
+#overlay
+    opacity: 0
+    visibility: hidden
+    pointer-events: none
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 150
+    transition: .3s all ease-in-out
+    &.active
+        opacity: 1
+        visibility: visible
+        pointer-events: visible
+.section-title
+    font-weight: bold
+    font-size: 28px
+    color: $neutral-5
+.wrapper-main
+    padding-left: 110px
+    position: relative
+    @media screen and ( max-width: 600.98px )
+        padding-left: 0
+main
+    padding-top: 61px
+    @media screen and ( max-width: 768.98px )
+        padding-top: 51px
+section
+    padding: 24px 0
+
+.status
+    width: 104px
+    height: 24px
+    border-radius: 4px
+    text-align: center
+
+    span,
+    p
+        white-space: nowrap
+        font-weight: 600
+        font-size: 14px
+    &-color__black
+        span,
+        p
+            color: #454F5B !important
+    &-color__white
+        span,
+        p
+            color: #fff !important
+
+.yellow
+    background: $yellow-brand
+.yellow-2
+    background: $yellow-2
+.yellow-4
+    background: $yellow-4
+.red
+    background: $red-3
+.green
+    background: $green-3
+.green-4
+    background: $green-4
+.green-0
+    background: $green-0
+.green-2
+    background: #ABD653
+.gray
+    background: $neutral-2
+.blue
+    background: $blue-4
+.blue-3
+    background: $blue-3
+.orange
+    background: $orange-4
+.orange-2
+    background: $orange-2
+.orange-0
+    background: $orange-0
+.red-1
+    background: $red-1
+.blue-1
+    background: $blue-1
+.pink
+    background: #FCA5A6
+.dot
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    display: block
+hr
+    clear: both
+    border: 1px solid $neutral-2
+
+    @media screen and ( max-width: 575.98px )
+        flex-direction: column
+        .btn
+            &-done,
+            &-handle,
+            &-dis
+                width: 100%
+                margin-left: 0
+                margin-bottom: 16px
+.tabs
+    &-list
+        li
+            cursor: pointer
+            p
+                padding: 14px 8px
+                position: relative
+                font-weight: 600
+                font-size: 16px
+                color: #212B36
+            &.active
+                p
+                    color: #BE1128
+                    &::after
+                        position: absolute
+                        width: 100%
+                        height: 4px
+                        content: ''
+                        background: #BE1128
+                        bottom: 0
+                        left: 0
+    .panel
+        display: none
+        &.active
+            display: block
+.container--tabs
+    .nav-tabs
+        padding-bottom: 16px
+        overflow-x: auto
+        li
+            cursor: pointer
+            a
+                padding: 14px 8px
+                position: relative
+                font-weight: 600
+                font-size: 16px
+                color: #212B36
+                white-space: nowrap
+            &.active
+                a
+                    color: #BE1128
+                    &::after
+                        position: absolute
+                        width: 100%
+                        height: 4px
+                        content: ''
+                        background: #BE1128
+                        bottom: 0
+                        left: 0
+    .tab-content
+        .panel
+            display: none
+            &.active
+                display: block
+.pagination-nav
+    width: 100%
+    .pagination
+        .page-item
+            margin-right: 4px
+            .page-link
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 32px
+                height: 32px
+                background: $white
+                border: 1px solid $neutral-2
+                box-sizing: border-box
+                border-radius: 4px
+                font-size: 1rem
+                color: $neutral-4
+                transition: all .3s
+            &:hover,
+            &.active
+                .page-link
+                    border: 1px solid $red-brand
+.table-sec
+    .panel
+        .wrapper-header
+            .wrap-left
+                .count-money
+                    p
+                        margin-right: 24px
+                        font-size: 16px
+                        color: $neutral-4
+                        span
+                            font-weight: 700
+            .wrap-right
+                margin-left: auto
+                .select-box
+                    width: 142px
+                    height: 36px
+                    background: $white
+                    border: 1px solid #D3D8DE
+                    box-sizing: border-box
+                    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03)
+                    border-radius: 4px
+                    position: relative
+                    .dot
+                        position: absolute
+                        top: 50%
+                        left: 10px
+                        transform: translateY(-50%)
+                    .select
+                        width: 100%
+                        height: 100%
+                        padding: 0
+                        margin: 0
+
+                        .select-styled
+                            width: 100%
+                            height: 100%
+                            border: 0
+                            padding: 0
+                            justify-content: center
+                            background: $trans
+                            padding-left: 30px
+                            padding-right: 10px
+                            &::after
+                                margin-left: auto
+                .search-box
+                    margin-left: 16px
+                    form
+                        .form-group
+                            width: 292px
+                            height: 36px
+                            background: $white
+                            border: 1px solid #D3D8DE
+                            box-sizing: border-box
+                            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.03)
+                            border-radius: 4px
+                            position: relative
+                            padding: 8px 10px
+                            .form-control
+                                width: 100%
+                                height: 100%
+                                border: 0
+                                background: $trans
+                                padding-left: 30px
+                            .icon
+                                position: absolute
+                                top: 50%
+                                left: 10px
+                                transform: translateY(-50%)
+        .wrapper-body
+            width: 100%
+            overflow: auto
+            padding-bottom: 24px
+            padding-top: 16px
+            margin-bottom: 16px
+            table
+                width: 100%
+                tr
+                    th
+                        text-align: center
+                        padding: 16px
+                        white-space: nowrap
+                        cursor: pointer
+                        background: $neutral-1
+                        .title
+                            position: relative
+                            justify-content: center
+                            display: flex
+                            align-items: center
+                            span
+                                font-size: 16px
+                                color: $neutral-4
+                                font-weight: 600
+                                &:first-child
+                                    padding-right: 8px
+                            span + span
+                                width: 10px
+                        &:nth-child(1),
+                        &:nth-child(2)
+                            position: -webkit-sticky
+                            position: sticky
+                            z-index: 2
+                            border-right: 1px solid $neutral-3
+                            box-shadow: 0px 2px 16px rgba(33, 43, 54, 0.05)
+                        &:nth-child(1)
+                            left: 0
+                        &:nth-child(2)
+                            left: 67px
+
+                    td
+                        cursor: pointer
+                        text-align: center
+                        padding: 16px
+                        background: $white
+                        border-top: 1px solid $neutral-3
+                        white-space: nowrap
+                        color: $neutral-4
+                        position: relative
+                        &:nth-child(1),
+                        &:nth-child(2)
+                            position: -webkit-sticky
+                            position: sticky
+                            z-index: 2
+                            border-right: 1px solid $neutral-3
+                            box-shadow: 0px 2px 16px rgba(33, 43, 54, 0.05)
+                        &:nth-child(1)
+                            left: 0
+                        &:nth-child(2)
+                            left: 67px
+                        span
+                            cursor: pointer
+                            color: $blue-4
+                            font-weight: 600
+                        .form-control
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%, -50%)
+                            z-index: 2
+                            opacity: 0
+                            cursor: pointer
+                            width: 18px
+                            height: 18px
+                        input#checkbox:checked ~ .form-label::before
+                            color: $neutral-4
+                            background: $yellow-5
+                            border: 0
+                        .form-label
+                            display: block
+                            position: relative
+                            cursor: pointer
+
+                            &::before
+                                content: "\e5ca"
+                                font-family: Material Icons
+                                font-size: 16px
+                                color: transparent
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                position: absolute
+                                width: 18px
+                                height: 18px
+                                background: $white
+                                border: 1px solid $neutral-2
+                                box-sizing: border-box
+                                border-radius: 4px
+                                left: 50%
+                                top: 50%
+                                transform: translate(-50%, -50%)
+
+            &::-webkit-scrollbar-track
+                box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+                background-color: #f5f5f5
+                border-radius: 20px
+            &::-webkit-scrollbar
+                width: 8px
+                height: 8px
+            &::-webkit-scrollbar-thumb
+                border-radius: 3px
+                box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+                background-color: $neutral-2
+        .pagination-nav
+            p
+                font-size: 1rem
+                color: $neutral-4
+            .pagination
+                margin-left: auto
+        @media screen and ( max-width: 768.98px )
+            .wrapper-header
+                flex-direction: column
+                .wrap-left
+                    margin-top: 16px
+                .wrap-right
+                    width: 100%
+                    flex-direction: column
+                    margin-left: 0
+                    .select-box
+                        width: 100%
+                        margin: 16px 0
+                    .search-box
+                        width: 100%
+                        margin-left: 0
+                        form
+                            .form-group
+                                width: 100%
+.progress
+    width: 100%
+    display: flex
+    height: 6px
+    overflow: hidden
+    background-color: $white
+    border-radius: 23px
+    .progress-bar
+        display: flex
+        flex-direction: column
+        justify-content: center
+        overflow: hidden
+        text-align: center
+        white-space: nowrap
+        transition: width .6s ease
+.sidebar-title
+    opacity: 1
+    visibility: visible
+    max-height: 100%
+    transition: max-height 0s ease-out
+
+    p
+        font-weight: 600
+        font-size: 22px
+        color: #464646
+        margin: 16px 24px
+    a
+        .icon
+            margin: 0 24px
+.arrow-right
+    text-align: right
+    cursor: pointer
+    padding: 0 22px
+    margin-bottom: 8px
+    img
+        transition: all ease-in-out .3s
+#checkbox
+    display: none
+.label-checkbox
+    display: block
+    position: relative
+    cursor: pointer
+
+    &::before
+        content: "\e5ca"
+        font-family: Material Icons
+        font-size: 13px
+        font-weight: 900
+        color: transparent
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        width: 18px
+        height: 18px
+        background: $white
+        border: 1px solid #D3D8DE
+        box-sizing: border-box
+        border-radius: 4px
+        left: -33px
+        top: 50%
+        transform: translateY(-50%)
+    @media screen and ( max-width: 992.98px )
+        &::before
+            right: 35px
+    @media screen and ( max-width: 575.98px )
+        &::before
+            right: -20px
+#checkbox:checked + .label-checkbox::before
+    color: #454F5B
+    background: #F7B512
+    border: 1px solid $trans
+
+.form-control
+    &:focus
+        outline: 0
+.infor-created
+    padding: 16px
+    margin-bottom: 24px
+    background: #F8F9FA
+    border: 1px solid #D3D8DE
+    box-sizing: border-box
+    border-radius: 8px
+    .title-created
+        display: flex
+        align-items: center
+        cursor: pointer
+        p
+            font-weight: 700
+            font-size: 20px
+            color: #454F5B
+
+        &::after
+            margin-left: auto
+            content: '\e5cf'
+            font-family: Material Icons
+            transition: all .3s
+            color: #454F5B
+            font-family: Material Icons
+            font-weight: 900
+            transform: rotate(0deg)
+        &.active
+            &::after
+                transform: rotate(180deg)
+    .wrap-form
+        margin-top: 16px
+        display: none
+        .form-group
+            margin-bottom: 16px
+            display: flex
+            flex-direction: column
+            label
+                font-weight: 600
+                font-size: 16px
+                color: #454F5B
+                margin-bottom: 10px
+            .form-control
+                opacity: .4
+                width: 100%
+                height: 32px
+                border: 1px solid $neutral-2
+                box-sizing: border-box
+                border-radius: 4px
+                color: $neutral-4
+                padding: 0 16px
+    @media screen and ( max-width: 600px )
+        padding: 10px
+        .title-created
+            p
+                font-size: 16px
+
+.history-list
+    padding-top: 24px
+    &_header
+        padding-bottom: 32px
+        cursor: pointer
+        p
+            font-weight: bold
+            font-size: 16px
+            color: $neutral-5
+        .material-icons
+            cursor: pointer
+            transition: all .3s
+        &.active
+            .material-icons
+                transform: rotate(180deg)
+    &_main
+        .list-history
+            // display: none
+            position: relative
+            padding-left: 16px
+            li
+                position: relative
+                margin-bottom: 24px
+                display: flex
+                &::before
+                    position: absolute
+                    content: ''
+                    left: -20px
+                    top: 7px
+                    width: 9px
+                    height: 9px
+                    border-radius: 50%
+                    background: #B6BEC8
+                .date-time
+                    padding-right: 8px
+                    font-size: r(14px)
+                    color: $neutral-4
+                .time
+                    font-size: r(14px)
+                    color: $neutral-3
+                .content
+                    padding-left: 8px
+                    .title
+                        p
+                            font-weight: bold
+                            font-size: 16px
+                            color: $neutral-5
+                    .sub-title
+                        p
+                            font-size: 14px
+                            color: #6A798C
+                &.active
+                    &::before
+                        background: #BE1128
+                    .content
+                        .title
+                            p
+                                color: #BE1128
+            &::before
+                position: absolute
+                content: ''
+                left: 0
+                top: 10px
+                width: 1px
+                height: 82%
+                background: #D3D8DE
+.form-group
+    .title-filed
+        display: flex
+        align-items: center
+        margin-bottom: 24px
+        p
+            font-weight: 700
+            font-size: 16px
+            color: #212B36
+        .button-upload
+            margin-left: 16px
+            position: relative
+    table
+        width: 100%
+        border: solid .5px $neutral-2
+        margin-bottom: 24px
+        tr
+            &:first-child
+                th
+                    padding: 10px 16px
+                    background: $neutral-2
+                    &:last-child
+                        text-align: centerzxa
+            td
+                padding: 16px
+.disabled
+    label
+        color: rgba($color: #212B36, $alpha: .6) !important
+.box-smal
+    &.disabled
+        opacity: .6
+        background: #EAEEF2 !important
+        color: rgba($color: #212B36, $alpha: .6) !important
+.unit
+    width: 90px
+    height: 36px
+    background: #FFC20E
+    border-radius: 4px
+    opacity: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: 16px
+    color: #000
+    &.disabled
+        opacity: .6
