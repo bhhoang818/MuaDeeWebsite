@@ -1,0 +1,86 @@
+.footer
+    padding: 30px 0 100px
+    width: 100vw
+    height: calc( 100vh - 156px )
+    .logo-footer
+        display: block
+        max-width: 390px
+    .panel
+        margin-bottom: 116px
+        .panel-body
+            ul
+                display: flex
+                flex-direction: column
+                gap: 48px
+                li
+                    a
+                        position: relative
+                        width: 100%
+                        font-weight: 700
+                        font-size: 24px
+                        line-height: 30px
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        letter-spacing: 0.5px
+                        color: #000000
+                        &::after
+                            position: absolute
+                            top: 50%
+                            right: 0
+                            transform: translateY(-50%)
+                            background-image: url('../images/icons/arrow_chevron_forward.svg')
+                            background-position: center
+                            background-size: cover
+                            background-repeat: no-repeat
+                            width: 24px
+                            height: 24px
+                            display: flex
+                            align-items: center
+                            content: ''
+                            opacity: 0
+                            transition: all ease-in-out 1s
+
+                        &::before
+                            position: absolute
+                            bottom: -16px
+                            left: 0
+                            width: 0
+                            height: 2px
+                            background: #000
+                            content: ''
+                            transition: all ease-in-out .3s
+                    &:hover
+                        a
+                            &::after
+                                opacity: 1
+                            &::before
+                                width: 100%
+    .social-list
+        display: flex
+        align-items: center
+        gap: 16px
+        padding-left: 50px
+        a
+            display: block
+            width: 70px
+            height: 70px
+            background: rgba(116, 116, 128, 0.08)
+            border-radius: 10px
+            padding: 15px
+            .fa-brands
+                font-size: 40px
+                color: #000
+                transition: all ease-in-out .3s
+            &:hover
+                .fa-brands
+                    color: #6E7191
+    .download-app
+        display: flex
+        align-items: center
+        gap: 16px
+        a
+            display: block
+            max-width: 240px
+    @media screen and ( max-width: 1366.98px )
+        height: calc( 100vh - 110px )

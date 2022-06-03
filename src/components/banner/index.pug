@@ -1,19 +1,48 @@
-// START HOME
-section#home.section.header-bg-img.align-items-center.d-flex
-	.bg-overlay
-	.container.z-index
-		.row.justify-content-center
-			.col-lg-12
-				.text-center.header-content.mx-auto
-					h4.text-white.first-title.mb-4 Welcome
-					h1.header-name.text-white.text-capitalize.mb-0
-						| I'M 
-						span.element.fw-bold
-					p.text-white.mx-auto.header-desc.mt-4
-						| It is a long established fact that a reader will
-						| be of a page when established fact looking at its layout.
-					.mt-4.pt-2
-						a.btn.btn-outline-custom.btn-round(href='#') Download Cv
-	.scroll_down
-		a.scroll(href='#about')
-			i.text-white
+section.hero-banner 
+	.bannerSwiper
+		.slide-inner
+			.slide-inner__content 
+				.banner-desc
+					h1.big-txt 
+						span.long-line Mua đi, 
+						|đợi chi?
+					p.small-txt Mua trước. Trả sau. Lãi suất 0%
+						br
+						|cùng ứng dụng thanh toán thông minh của HD Bank
+				.qr-code.d-flex.align-items-center
+					.icon
+						img(src="./images/banner/QRCODE.svg", alt="")
+					a(href="") Tìm hiểu thêm
+			.slide-inner__img 
+				a(href="") 
+					img(src="./images/banner/b-1.jpg", alt="")
+		.slide-inner
+			.slide-inner__content 
+				.banner-desc
+					h1.big-txt Giảm ngay 
+						span.short-line 50k 
+						br
+						|cho đơn hàng 
+						br 
+						|đầu tiên
+				.qr-code.d-flex.align-items-center 
+					.icon
+						img(src="./images/banner/QRCODE.svg", alt="")
+					a(href="") Tìm hiểu thêm
+			.slide-inner__img
+				a(href="") 
+					img(src="./images/banner/b-2.jpg", alt="")
+		.slide-inner
+			.slide-inner__content 
+				.banner-desc
+					h1.big-txt Nhận ngay hạn
+						br
+						| mức đến 
+						span.long-line 15 triệu
+				.qr-code.d-flex.align-items-center 
+					.icon
+						img(src="./images/banner/QRCODE.svg", alt="")
+					a(href="") Tìm hiểu thêm
+			.slide-inner__img
+				a(href="") 
+					img(src="./images/banner/b-3.jpg", alt="")

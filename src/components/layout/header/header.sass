@@ -1,7 +1,16 @@
 header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background: #fff
+    z-index: 1001
     .navbar
-        padding: 50px 0
+        padding: 47px 0
+        width: 100%
+        height: 156px
         .navbar-collapse
+            width: 100%
             justify-content: space-between
             .navbar-brand
                 width: 167px
@@ -19,6 +28,11 @@ header
                         font-size: 17px
                         letter-spacing: -0.4px
                         color: #000000
+                        transition: all ease-in-out .3s
+                    @media screen and ( min-width: 1025px )
+                        &:hover
+                            .nav-link
+                                opacity: .7
                 .nav-item + .nav-item
                     &::after
                         position: absolute
@@ -48,7 +62,9 @@ header
                         &:hover
                             background: #000000
                             img
-                                filter: grayscale(100%)
+                                filter: brightness(0) invert(1)
+                                transition: all ease-in-out .3s
+
                 .download-app
                     padding: 16px 24px
                     gap: 16px
@@ -67,3 +83,7 @@ header
                     @media screen and ( min-width: 1025px )
                         &:hover
                             background: #D1A300
+    @media screen and ( max-width: 1366.98px )
+        .navbar
+            padding: 24px 0
+            height: 110px

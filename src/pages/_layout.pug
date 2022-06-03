@@ -15,7 +15,7 @@ html(lang="en")
 		link(rel="preconnect" href="https://fonts.gstatic.com")
 		link(rel='shortcut icon' type='image/png' href='favicon.ico')
 		
-	body(class=bodyClass)
+	body#main-scrollbar(class=bodyClass )
 		block header
 			include ../components/layout/header/header.pug
 		main
@@ -28,11 +28,16 @@ html(lang="en")
 		script.
 			LazyLoad.css([
 				'./css/plugins.min.css',
+				'./fonts/all.css'
 			], function () {
 			});
 		script.
 			LazyLoad.js([
+				'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js',
 				'./js/plugins.min.js',
-				'./js/main.min.js'
+				'./js/main.min.js',
+				'https://unpkg.co/gsap@3/dist/gsap.min.js',
+				'https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js',
+				'https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js'
 			], function(){
 			})

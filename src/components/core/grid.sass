@@ -2,18 +2,12 @@
 $layout: 100% !default
 $container: 100% !default
 $colCount: 12 !default
-$offset: 12px !default
+$offset: 15px !default
 $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !default
 
-.wrapper-container
-    width: 100%
-    padding: 0 24px
-    @media screen and ( max-width: 992.98px )
-        padding: 0 12px
-
 .container
-    padding-right: $offset*2
-    padding-left: $offset*2
+    padding-right: $offset/2
+    padding-left: $offset/2
     margin-left: auto
     margin-right: auto
     width: 100%
@@ -25,19 +19,19 @@ $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !d
 
 @media(min-width: 576px)
     .container
-        max-width: 540px
+        max-width: 570px
 @media (min-width: 768px)
     .container
-        max-width: 720px
+        max-width: 750px
 @media(min-width: 992px)
     .container
-        max-width: 960px
+        max-width: 990px
 @media(min-width: 1200px)
     .container
-        max-width: 1140px
+        max-width: 1170px
 @media(min-width: 1400px)
     .container
-        max-width: 1320px
+        max-width: 1360px
 .container-fluid
     width: 100%
     padding-right: $offset*2
