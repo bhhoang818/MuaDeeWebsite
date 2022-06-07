@@ -5,10 +5,12 @@
     padding: 56px 0
     display: flex
     align-items: center
-    overflow-x: hidden
-    .pin-wrap
-        // max-width: 1040px
+    .wrapper-container
+        width: 1040px
         margin: 0 auto
+        overflow: hidden
+    .pin-wrap
+        width: 100% * 3 !important
         .animation-wrap
             display: flex
             position: relative
@@ -22,7 +24,6 @@
                 align-items: center
                 padding: 0px
                 border-radius: 40px
-                user-select: none
                 background: rgba(116, 116, 128, 0.08)
                 .img
                     width: 100%

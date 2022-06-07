@@ -1,9 +1,16 @@
 .hero-banner
+    overflow-x: hidden
+    background: #F2F2F7
+    border-radius: 50px 50px 0px 0px
+    width: 100vw
+    height: 100vh
     .bannerSwiper
+        width: 100%
+        height: 100%
         .slide-inner
             padding-left: 200px
-            width: 100vw
-            height: calc( 100vh - 156px )
+            width: 100%
+            height: 100%
             display: flex
             align-items: center
             justify-content: space-between
@@ -59,7 +66,6 @@
         @media screen and ( max-width: 1366.98px )
             .slide-inner
                 padding-left: 50px
-                height: calc( 100vh - 110px )
                 &__img
                     width: 650px
                     a
