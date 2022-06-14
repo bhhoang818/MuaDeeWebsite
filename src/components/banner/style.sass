@@ -1,14 +1,24 @@
 .hero-banner
-    overflow-x: hidden
     background: #F2F2F7
     border-radius: 50px 50px 0px 0px
-    width: 100vw
-    height: 100vh
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    overflow-scrolling: touch
+    overflow-y: visible
+    position: relative
+    height: unset
+    overflow-x: hidden
+    margin: 0
     .bannerSwiper
-        width: 100%
-        height: 100%
+        width: 300%
+        height: 100vh !important
+        max-height: 100% !important
+        padding-top: 156px !important
+        overflow: hidden
+        display: flex
+        flex-wrap: nowrap
+        align-items: flex-end
         .slide-inner
-            padding-left: 200px
             width: 100%
             height: 100%
             display: flex
@@ -19,6 +29,7 @@
                 a
                     +img-ratio(860/824)
             &__content
+                padding-left: 200px
                 .banner-desc
                     .big-txt
                         font-weight: 700
@@ -64,13 +75,14 @@
                         text-decoration-line: underline
                         color: #000000
         @media screen and ( max-width: 1366.98px )
+            padding-top: 110px !important
             .slide-inner
-                padding-left: 50px
                 &__img
                     width: 650px
                     a
                         +img-ratio(620/680)
                 &__content
+                    padding-left: 150px
                     .banner-desc
                         .big-txt
                             font-size: 60px
