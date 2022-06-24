@@ -4,7 +4,7 @@ window.onload = () => {
     checkLayoutBanner();
     jumpSection();
     scrollTop();
-    if ($('#vid').length > 1) {
+    if ($('#vid').length >= 1) {
         let observer = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
