@@ -1,0 +1,30 @@
+.breadcrumb-wrapper
+    padding: 16px 0
+    background: #fff
+    .breadcrumb
+        display: flex
+        align-items: center
+        max-width: 860px
+        margin: 0 auto
+        gap: 20px
+        &-item
+            position: relative
+            a
+                font-weight: 600
+                font-size: 17px
+                letter-spacing: -0.4px
+                color: #0130C8
+            &.active
+                a
+                    font-weight: 400
+                    color: rgba(60, 60, 67, 0.6)
+
+        li + li
+            &::before
+                content: '/'
+                position: absolute
+                left: -10px
+                color: rgba(60, 60, 67, 0.6)
+
+    @media screen and ( max-width: 575.98px )
+        padding: 16px

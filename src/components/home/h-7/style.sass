@@ -1,6 +1,8 @@
 .home-7
+    width: 100vw
     .wrapper-container
         border-radius: 50px
+        height: 100%
         margin: 0 40px
         background: #fff
         display: flex
@@ -49,3 +51,29 @@
                     background: #F7C913
                     border-radius: 32px
                     margin: 0 auto
+    @media screen and ( max-width: 1024.98px )
+        .wrapper-container
+            margin: 0 20px
+            padding: 50px 24px
+            .panel
+                &-heading
+                    flex-direction: column
+                    margin-bottom: 24px
+                    gap: 10px
+                    .title
+                        font-size: 28px
+                        line-height: 34px
+                        text-align: center
+                &-body
+                    .desc
+                        font-size: 20px
+                        line-height: 24px
+                        margin-bottom: 16px
+                    ul
+                        flex-direction: column
+                        li
+                            p
+                                font-size: 20px
+                                line-height: 24px
+                    .btn-default
+                        width: 100%

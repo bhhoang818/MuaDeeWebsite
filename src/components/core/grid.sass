@@ -6,8 +6,8 @@ $offset: 15px !default
 $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !default
 
 .container
-    padding-right: $offset/2
-    padding-left: $offset/2
+    padding-right: $offset + 5
+    padding-left: $offset + 5
     margin-left: auto
     margin-right: auto
     width: 100%
@@ -69,7 +69,7 @@ $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !d
     flex-basis: 0
     -ms-flex-positive: 1
     flex-grow: 1
-    max-width: 100%
+    width: 100%
 
 .col-auto
     -ms-flex: 0 0 auto
@@ -81,7 +81,7 @@ $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !d
     .col-#{$col}
         -ms-flex: 0 0 (100% / $colCount * $col)
         flex: 0 0 (100% / $colCount * $col)
-        max-width: (100% / $colCount * $col)
+        width: (100% / $colCount * $col)
 
 @each $bp,$value in $grid-breakpoints
     @media (min-width: #{$value})
@@ -102,7 +102,7 @@ $grid-breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1280px, xxl: 1400px) !d
             .col-#{$bp}-#{$col}
                 -ms-flex: 0 0 (100% / $colCount * $col)
                 flex: 0 0 (100% / $colCount * $col)
-                max-width: (100% / $colCount * $col)
+                width: (100% / $colCount * $col)
 
 @for $col from 1 through $colCount
     .offset-#{$col}

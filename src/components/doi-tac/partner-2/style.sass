@@ -1,0 +1,102 @@
+.partner-2
+    .md-title
+        .md-subtitle
+            font-weight: 700
+            font-size: 40px
+            letter-spacing: -0.6px
+            color: #000000
+            margin-bottom: 80px
+            font-family: 'SF Pro Text'
+    .md-swiper
+        max-width: 1040px
+        width: 100%
+        margin: 0 auto
+        position: relative
+        .gallery-bottom
+            width: 100%
+            height: 547px
+            .slide-inner
+                position: relative
+                cursor: pointer
+                display: flex
+                align-items: center
+                justify-content: space-between
+                .inner-title
+                    flex: 0 0 50%
+                    p
+                        font-family: 'SF Pro Display'
+                        font-weight: 700
+                        font-size: 56px
+                        letter-spacing: -0.15px
+                        color: #B3B3B3
+                .inner-content
+                    width: 330px
+                    p
+                        font-family: 'SF Pro Display'
+                        font-weight: 400
+                        font-size: 24px
+                        letter-spacing: 0.5px
+                        color: #BCBCBC
+                &::after
+                    position: absolute
+                    bottom: -25px
+                    content: ''
+                    width: 100%
+                    height: 2px
+                    background: #D9DBE9
+            .swiper-slide
+                height: auto !important
+                padding-bottom: 50px
+                &:last-child
+                    .slide-inner
+                        &::after
+                            display: none
+                &-thumb-active
+                    .slide-inner
+                        .inner-title,
+                        .inner-content
+                            p
+                                color: #000
+        .gallery-top
+            position: absolute
+            top: -100px
+            left: 50%
+            z-index: 2
+            width: 365px
+            transform: translateX(-50%)
+            .button-swiper
+                z-index: 999
+                width: 100%
+                top: 30%
+                justify-content: space-between
+                @media screen and ( min-width: 1025px )
+                    display: none
+    @media screen and ( max-width: 1024.98px )
+        .md-title
+            .md-subtitle
+                margin-bottom: 0
+        .md-swiper
+            .gallery-top
+                position: static
+                width: 100%
+                transform: unset
+                .slide-inner
+                    &__img
+                        text-align: center
+            .gallery-bottom
+                height: auto
+                .slide-inner
+                    flex-direction: column
+                    &::after
+                        display: none
+                    .inner-title
+                        flex: unset
+                        width: 100%
+                        text-align: center
+                        p
+                            font-size: 40px
+                    .inner-content
+                        width: 100%
+                        p
+                            font-size: 20px
+                            text-align: center

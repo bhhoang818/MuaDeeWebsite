@@ -1,10 +1,10 @@
-section#hero-section.hero-banner
-    .bannerSwiper
+section#hero-banner.hero-banner
+    .bannerSwiper.banner-desktop
         .slide-inner.banner-item
             .slide-inner__content 
                 .banner-desc
                     h1.big-txt 
-                        span.long-line Mua đi, 
+                        span.midium-line Mua đi, 
                         |đợi chi?
                     p.small-txt Mua trước. Trả sau. Lãi suất 0%
                         br
@@ -38,7 +38,7 @@ section#hero-section.hero-banner
                     h1.big-txt Nhận ngay hạn
                         br
                         | mức đến 
-                        span.long-line 15 triệu
+                        span.midium-line 15 triệu
                 .qr-code.d-flex.align-items-center 
                     .icon
                         img(src="./images/banner/QRCODE.svg", alt="")
@@ -46,4 +46,52 @@ section#hero-section.hero-banner
             .slide-inner__img
                 a(href="") 
                     img(src="./images/banner/b-3.jpg", alt="")
-        
+    
+    .bannerSwiper.swiper.banner-mobile
+        .swiper-wrapper
+            .swiper-slide
+                .slide-inner
+                    .slide-inner__content 
+                        .banner-desc
+                            h1.big-txt 
+                                span.short-line Mua đi, 
+                                |đợi chi?
+                            p.small-txt Mua trước. Trả sau. Lãi suất 0%
+                                br
+                                |cùng ứng dụng thanh toán thông 
+                                br
+                                |minh của HD Bank
+                        .download-app
+                            a.btn.btn-download(href="") 
+                                span Tải ngay
+                            a.readmore(href="") Tìm hiểu thêm
+                    .slide-inner__img 
+                        a(href="") 
+                            img(src="./images/banner/b-1.jpg", alt="")
+            .swiper-slide
+                .slide-inner
+                    .slide-inner__content 
+                        .banner-desc
+                            h1.big-txt Giảm ngay 
+                                span.short-line 50k 
+                                br
+                                |cho đơn hàng 
+                                br 
+                                |đầu tiên
+                    .slide-inner__img
+                        a(href="") 
+                            img(src="./images/banner/b-2.jpg", alt="")
+            .swiper-slide
+                .slide-inner
+                    .slide-inner__content 
+                        .banner-desc
+                            h1.big-txt Nhận ngay hạn
+                                br
+                                | mức đến 
+                                span.short-line 15 triệu
+                    .slide-inner__img
+                        a(href="") 
+                            img(src="./images/banner/b-3.jpg", alt="")
+        .button-swiper 
+            .swiper-button-next
+            .swiper-button-prev

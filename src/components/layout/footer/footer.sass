@@ -1,7 +1,7 @@
 .footer
-    padding: 30px 0 100px
+    padding: 80px 0
     width: 100vw
-    height: calc( 100vh - 156px )
+    background: #F2F2F7
     .logo-footer
         display: block
         max-width: 390px
@@ -24,6 +24,8 @@
                         justify-content: space-between
                         letter-spacing: 0.5px
                         color: #000000
+                        font-family: 'SF Pro Display'
+
                         &::after
                             position: absolute
                             top: 50%
@@ -82,5 +84,21 @@
         a
             display: block
             max-width: 240px
-    @media screen and ( max-width: 1366.98px )
-        height: calc( 100vh - 110px )
+    @media screen and ( max-width: 1024.98px )
+        height: auto
+        padding: 50px 0
+    @media screen and ( max-width: 575.98px )
+        .logo-footer
+            margin-bottom: 32px
+        .panel
+            margin-bottom: 30px
+            .panel-body
+                ul
+                    gap: 32px
+                    li
+                        a
+                            color: #000
+        .social-list
+            margin-bottom: 30px
+            padding-left: 0
+            justify-content: center

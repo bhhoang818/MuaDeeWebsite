@@ -1,0 +1,106 @@
+.pertner-3
+    .wrapper-container
+        max-width: 1040px
+        width: 100%
+        margin: 0 auto
+        .wrap-grid
+            display: flex
+            flex-wrap: wrap
+            margin-left: -15px
+            margin-right: -15px
+            .grid-item
+                flex: 0 0 50%
+                width: 50%
+                padding: 0 15px
+                .hero-title
+                    padding-right: 43px
+                    font-family: 'SF Pro Display'
+                    font-weight: 700
+                    font-size: 80px
+                    letter-spacing: -0.15px
+                    line-height: 95px
+                    color: #000000
+                .wrap-content
+                    position: relative
+                    .content
+                        position: absolute
+                        top: 32px
+                        left: 32px
+                        .sub-title
+                            display: flex
+                            align-content: center
+                            font-weight: 600
+                            font-size: 12px
+                            letter-spacing: 0.1px
+                            text-transform: uppercase
+                            color: rgba(60, 60, 67, 0.6)
+
+                            .material-icons
+                                color: #008A00
+                                font-size: 16px
+                        .col-title
+                            font-family: 'SF Pro Display'
+                            font-weight: 700
+                            font-size: 128px
+                            letter-spacing: -0.15px
+                            color: #000000
+                            padding: 0
+                        .desc
+                            font-family: 'SF Pro Display'
+                            font-weight: 700
+                            font-size: 24px
+                            letter-spacing: 0.5px
+                            color: rgba(60, 60, 67, 0.6)
+                &:nth-child(3)
+                    flex: 0 0 100%
+                    margin-top: -65px
+                    .wrap-content
+                        padding-left: 50px
+                        .content
+                            left: 100px
+                &:nth-child(4)
+                    margin-top: -150px
+                    margin-left: auto
+                    .wrap-content
+                        .content
+                            top: auto
+                            bottom: 32px
+    @media screen and ( max-width: 1024.98px )
+        .wrapper-container
+            padding: 0 20px
+            .wrap-grid
+                .grid-item
+                    .hero-title
+                        font-size: 60px
+                        line-height: normal
+                    .wrap-content
+                        .content
+                            .col-title
+                                font-size: 80px
+    @media screen and ( max-width: 768.98px )
+        .wrapper-container
+            .wrap-grid
+                .grid-item
+                    margin-bottom: 24px
+                    .hero-title
+                        padding-right: 0
+                    &:nth-child(3),
+                    &:nth-child(4)
+                        margin-top: 0
+                    &:nth-child(3)
+                        .wrap-content
+                            padding-left: 0
+    @media screen and ( max-width: 575.98px )
+        .wrapper-container
+            .wrap-grid
+                margin: 0
+                .grid-item
+                    flex: 0 0 100%
+                    padding: 0
+                    .hero-title
+                        font-size: 48px
+                        padding-right: 40px
+                    &:nth-child(3)
+                        .wrap-content
+                            .content
+                                left: 40px

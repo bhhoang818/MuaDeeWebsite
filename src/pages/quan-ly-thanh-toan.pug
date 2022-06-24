@@ -1,0 +1,11 @@
+extends _layout.pug
+
+block var
+	- var title = 'Quản lý thanh toán'
+	- var bodyClass = 'paymentPage'
+
+block main
+	include ../components/layout/breadcrumb/index.pug
+	include ../components/quanlythanhtoan/index.pug
+block footer
+	include ../components/layout/footer/footer.pug

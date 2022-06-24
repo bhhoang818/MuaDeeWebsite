@@ -1,0 +1,176 @@
+.pertner-4
+    padding-top: 100px
+    .wrapper-container
+        max-width: 1040px
+        width: 100%
+        margin: 0 auto
+    .wrap-grids
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 82px
+        .grid-item
+            border-radius: 40px
+            height: 500px
+
+            &_content
+                padding-left: 50px
+                h3
+                    font-family: 'SF Pro Display'
+                    font-weight: 700
+                    font-size: 56px
+                    letter-spacing: -0.15px
+                    padding: 0
+                    width: 500px
+                p
+                    font-weight: 700
+                    font-size: 40px
+                    letter-spacing: -0.6px
+            &:nth-child(1)
+                width: 100%
+                background: #D8F3D6
+                background-image: url(../images/bg.png)
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: center
+                display: flex
+                align-items: center
+                justify-content: space-between
+                margin-bottom: 70px
+                .grid-item_img
+                    padding-right: 60px
+            &:nth-child(2)
+                width: 485px
+                margin-right: 35px
+                padding: 60px 50px
+                background: #2C2C2E
+                box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.02), 0px 8px 64px rgba(0, 0, 0, 0.05)
+                .grid-item_img
+                    margin-bottom: 32px
+                    span
+                        margin: 0 8px
+                .grid-item_content
+                    padding-left: 0
+                    h3
+                        padding-right: 81px
+                    p
+                        color: #FFFFFF
+            &:nth-child(3)
+                width: 485px
+                margin-left: 35px
+                margin-top: -120px
+                padding: 86px 50px
+                background: #FFFFFF
+                box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.02), 0px 8px 64px rgba(0, 0, 0, 0.05)
+                .grid-item_content
+                    padding-left: 0
+                    p
+                        color: #000
+    .wrap-bottom
+        .panel
+            &-heading
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .title
+                    font-family: 'SF Pro Display'
+                    font-weight: 700
+                    font-size: 56px
+                    text-align: center
+                    letter-spacing: -0.15px
+            &-body
+                p
+                    font-family: 'SF Pro Display'
+                    font-weight: 700
+                    font-size: 56px
+                    text-align: center
+                    letter-spacing: -0.15px
+                    color: #000000
+                    span
+                        padding: 0px 24px
+                        gap: 10px
+                        width: 198px
+                        height: 67px
+                        background: #000000
+                        border-radius: 100px
+                        color: #fff
+                        margin-right: 8px
+    @media screen and ( max-width: 1024.98px )
+        padding-top: 24px
+        .wrap-grids
+            margin-bottom: 30px
+            .grid-item
+                &_content
+                    h3
+                        font-size: 48px
+                    p
+                        font-size: 36px
+
+                &:nth-child(2),
+                &:nth-child(3)
+                    width: calc( 100% / 2 - 15px )
+                &:nth-child(1)
+                    margin-bottom: 30px
+                &:nth-child(2)
+                    margin-right: 0
+                &:nth-child(3)
+                    margin-left: auto
+                    margin-top: 0
+        .wrap-bottom
+            .panel
+                &-heading
+                    .title
+                        font-size: 48px
+                &-body
+                    p
+                        font-size: 48px
+    @media screen and ( max-width: 768.98px )
+        .wrap-grids
+            .grid-item
+                height: auto
+                padding: 40px 24px
+                &_content
+                    padding-left: 0
+                    h3
+                        width: auto
+                &:nth-child(1)
+                    .grid-item_img
+                        padding-right: 0
+                &:nth-child(2),
+                &:nth-child(3)
+                    width: 100%
+                &:nth-child(2)
+                    margin-bottom: 24px
+                &:nth-child(3)
+                    margin-left: 0
+    @media screen and ( max-width: 575.98px )
+        .wrap-grids
+            .grid-item
+                &_content
+                    h3
+                        font-size: 28px
+                    p
+                        font-size: 28px
+                &:nth-child(1)
+                    flex-direction: column
+                    background-image: url(../images/bg-mb.png)
+                &:nth-child(2)
+                    order: 3
+                    margin-bottom: 0
+                    .grid-item_content
+                        h3
+                            padding-right: 0
+                &:nth-child(3)
+                    order: 2
+                    margin-bottom: 24px
+                &:nth-child(2),
+                &:nth-child(3)
+                    padding: 82px 24px
+        .wrap-bottom
+            .panel
+                &-heading
+                    .title
+                        font-size: 28px
+                &-body
+                    p
+                        font-size: 28px

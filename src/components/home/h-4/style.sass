@@ -2,81 +2,88 @@
     background: #E8ECFF
     border-radius: 0px
     width: 100vw
-    padding: 56px 0
-    display: flex
-    align-items: center
     .wrapper-container
-        padding-top: 56px
+        padding: 56px 0
         overflow: hidden
-        width: 100vw
-        padding-left: 325px
-        .pin-wrap
-            width: 300% !important
-            .animation-wrap
+        max-width: 1040px
+        width: 100%
+        margin: 0 auto
+        .wrapper-grid
+            display: flex
+            align-items: center
+            gap: 30px
+            overscroll-behavior: none
+            width: 300%
+            height: 100vh !important
+            flex-wrap: nowrap
+            .panels
+                flex: 0 0 810px
                 display: flex
-                position: relative
-                z-index: 1
-                gap: 32px
+                flex-direction: column
+                padding: 0px
+                background: #FFFFFF
+                border-radius: 40px
+                .img
+                    width: 100%
+                    +img-ratio(606/1008)
+                    img
+                        border-radius: 40px 40px 0 0
+                .content
+                    padding: 50px 100px 50px
+                    width: 600px
+                    p
+                        font-family: 'SF Pro Display'
+                        font-weight: 700
+                        font-size: 40px
+                        letter-spacing: -0.6px
+                        color: #000000
+                &:first-child
+                    background: none
+                    align-items: flex-start
+                    .content
+                        width: 675px
+                        padding: 0
+                        h3
+                            font-family: 'SF Pro Display'
+                            font-weight: 700
+                            font-size: 56px
+                            letter-spacing: -0.15px
+                            color: #000000
+    @media screen and ( max-width: 1024.98px )
+        .wrapper-container
+            padding: 56px 20px
+            .wrapper-grid
+                width: 100%
+                height: auto !important
+                flex-wrap: wrap
+                .panels
+                    flex: 0 0 100%
+                    .hero-title
+                        margin-bottom: 24px
+                        text-align: center
+                    .content
+                        padding: 50px 30px
 
-                .item
-                    display: flex
-                    flex: 0 0 810px
-                    flex-direction: column
-                    align-items: center
-                    padding: 0px
-                    border-radius: 40px
-                    background: rgba(116, 116, 128, 0.08)
+                    &:first-child
+                        justify-content: center
+                        align-items: center
+                        .content
+                            width: 100%
+                            h3
+                                font-size: 28px
+                                text-align: center
+
+                            .btn-default
+                                margin: 0 auto
+    @media screen and ( max-width: 768.98px )
+        .wrapper-container
+            padding: 30px 20px
+            .wrapper-grid
+                .panels
                     .img
-                        width: 100%
-                        +img-ratio(606/1008)
-                        img
-                            border-radius: 40px 40px 0 0
+                        +img-ratio(315/335)
                     .content
                         width: 100%
-                        padding: 50px 100px 100px
-                        background: #fff
-                        border-radius: 0 0 40px 40px
+                        padding: 30px
                         p
-                            font-weight: 700
-                            font-size: 40px
-                            line-height: 48px
-                            letter-spacing: -0.6px
-                            color: #000000
-                    &:first-child
-                        align-items: flex-start
-                        justify-content: center
-                        padding: 0
-                        background: none
-                        .content
-                            background: none
-                            height: auto
-                            padding: 0
-                            h3
-                                font-weight: 700
-                                font-size: 56px
-                                line-height: 67px
-                                letter-spacing: -0.15px
-                                color: #000000
-                                margin-bottom: 73px
-                                span
-                                    position: relative
-                                    &::before
-                                        position: absolute
-                                        bottom: -45px
-                                        left: 0
-                                        content: url(../images/icons/line-2.svg)
-                            .btn-default
-                                width: 300px
-                                background: #F7C913
-                                p
-                                    font-weight: 600
-                                    font-size: 17px
-                                    line-height: 22px
-                                    letter-spacing: -0.4px
-                                    color: #000000
-        @media screen and ( max-width: 1366.98px )
-            padding-left: 250px
-            .pin-wrap
-                .animation-wrap
-                    .item
-                        flex: 0 0 780px
+                            font-size: 20px

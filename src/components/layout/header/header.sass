@@ -22,6 +22,8 @@ header
                 background: #FFFFFF
                 border: 1px solid #D9DBE9
                 border-radius: 100px
+                flex-direction: row
+
                 .nav-item
                     position: relative
                     .nav-link
@@ -69,7 +71,7 @@ header
                 .download-app
                     padding: 16px 24px
                     gap: 16px
-                    width: 152px
+                    width: max-content
                     height: 56px
                     background: #F7C913
                     border-radius: 32px
@@ -84,9 +86,36 @@ header
                     @media screen and ( min-width: 1025px )
                         &:hover
                             background: #D1A300
+                .partner
+                    @media screen and ( min-width: 1025px )
+                        display: none
     &--scrolled
         height: 110px
     @media screen and ( max-width: 1366.98px )
         .navbar
             padding: 24px 0
             height: 110px
+    @media screen and ( max-width: 1024.98px )
+        .navbar
+            padding: 16px 0
+            height: auto
+            .navbar-collapse
+                flex-direction: column
+                justify-content: center
+                .navbar-brand
+                    width: 113px
+                .navbar-nav
+                    display: none
+                .nav-button
+                    width: 100%
+                    justify-content: center
+                    .download-app
+                        display: none
+                    .suport
+                        border: 0
+                    .partner
+                        font-weight: 600
+                        font-size: 15px
+                        letter-spacing: -0.2px
+                        text-decoration-line: underline
+                        color: #000000

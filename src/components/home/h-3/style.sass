@@ -3,13 +3,17 @@
     padding-bottom: 150px
     .wrapper-container
         max-width: 1040px
+        width: 100%
         background: #FFFFFF
         box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.02), 0px 8px 64px rgba(0, 0, 0, 0.05)
         border-radius: 40px
         padding: 42px 72px
+        @media screen and ( max-width: 1024.98px )
+            box-shadow: unset
         .wrap-left
             width: 70%
             .sub-title
+                font-family: 'SF Pro Display'
                 font-weight: 700
                 font-size: 40px
                 line-height: 48px
@@ -24,6 +28,7 @@
                     position: relative
                     padding-left: 58px
                     p
+                        font-family: 'SF Pro Display'
                         font-weight: 700
                         font-size: 24px
                         line-height: 30px
@@ -42,7 +47,7 @@
                 background: url(../images/iPhone.png) 50% no-repeat
                 background-size: 100% 100%
                 overflow: hidden
-                +img-ratio(495/243)
+                +img-ratio(495/245)
                 video
                     padding: 17px 16px
                     border-radius: 50px
@@ -54,3 +59,30 @@
                     top: 50%
                     left: 50%
                     transform: translate(-50%, -50%)
+    @media screen and ( max-width: 575.98px )
+        padding-top: 15px
+        padding-bottom: 60px
+        .wrapper-container
+            flex-direction: column-reverse
+            padding: 50px 30px
+            border-radius: 30px
+            .wrap-left
+                width: 100%
+                .sub-title
+                    font-size: 28px
+                    line-height: 34px
+                ul
+                    margin-bottom: 32px
+                    li
+                        p
+                            font-size: 20px
+                            line-height: 24px
+                .btn-default
+                    border: 2px solid #F7C913
+                    border-radius: 32px
+                    width: 100%
+
+            .wrap-right
+                margin-bottom: 50px
+                width: 100%
+                .mobile-wrapper
