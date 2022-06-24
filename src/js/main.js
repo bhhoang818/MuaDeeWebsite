@@ -4,18 +4,21 @@ window.onload = () => {
     checkLayoutBanner();
     jumpSection();
     scrollTop();
-    let observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                vid.currentTime = 1.2;
-            } else {
-                if (entry.isIntersecting) {
-                    vid.play();
+    if ($('#vid').length > 1) {
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    vid.currentTime = 1.2;
+                } else {
+                    if (entry.isIntersecting) {
+                        vid.play();
+                    }
                 }
-            }
+            });
         });
-    });
-    observer.observe(vid);
+        observer.observe(vid);
+
+    }
 }
 const initSplide = () => {
     var swiper = new Swiper(".mySwiper", {
@@ -162,17 +165,17 @@ const gsapInit = () => {
         });
 
         /* Panels */
-        let gridItem = gsap.utils.toArray("#panels .grid-item");
+        let gridItem = gsap.utils.toArray(".panels-container .grid-item");
 
         gsap.to(gridItem, {
             xPercent: -100 * (gridItem.length - 1),
             ease: "none",
             scrollTrigger: {
-                trigger: "#panels",
+                trigger: ".panels-container",
                 pin: true,
                 scrub: 1,
                 snap: 1 / (gridItem.length - 1),
-                end: () => "+=" + document.querySelector("#panels").offsetWidth
+                end: () => "+=" + document.querySelector(".panels-container").offsetWidth
             }
         });
 
