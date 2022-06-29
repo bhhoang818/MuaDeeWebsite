@@ -1,4 +1,4 @@
-window.onload = () => {
+$(document).ready(() => {
     initSplide();
     gsapInit();
     checkLayoutBanner();
@@ -9,6 +9,8 @@ window.onload = () => {
             entries.forEach((entry) => {
                 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                     vid.currentTime = 1.2;
+                    vid.play();
+
                 } else {
                     if (entry.isIntersecting) {
                         vid.play();
@@ -19,7 +21,10 @@ window.onload = () => {
         observer.observe(vid);
 
     }
-}
+    headerActive();
+
+})
+
 const initSplide = () => {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -104,7 +109,7 @@ const gsapInit = () => {
         let smoother = ScrollSmoother.create({
             wrapper: '.body-container-wrapper',
             content: '.body-scrollable-area',
-            smooth: .5,
+            smooth: .8,
             effects: true
         });
         smoother.scrollTop(window.pageYOffset);
@@ -132,7 +137,7 @@ const gsapInit = () => {
                 y: y,
                 autoAlpha: 0
             }, {
-                duration: 1.25,
+                duration: 2.25,
                 x: 0,
                 y: 0,
                 autoAlpha: 1,
@@ -206,7 +211,7 @@ const gsapInit = () => {
                 y: y,
                 autoAlpha: 0
             }, {
-                duration: 1.25,
+                duration: 2.25,
                 x: 0,
                 y: 0,
                 autoAlpha: 1,
@@ -238,36 +243,6 @@ const gsapInit = () => {
 
         });
     }
-    const showAnim = gsap.from('header', {
-        yPercent: -100,
-        paused: true,
-        duration: 0.2
-    }).progress(1);
-    ScrollTrigger.create({
-        start: "top top",
-        end: 99999,
-        onUpdate: (self) => {
-            self.direction === -1 ? showAnim.play() : showAnim.reverse()
-        }
-    });
-
-
-    let links = gsap.utils.toArray("nav a");
-    gsap.utils.toArray(".nav-link").forEach(function (a) {
-        a.addEventListener("click", function (e) {
-            e.preventDefault();
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: e.target.getAttribute("href")
-            });
-        });
-    });
-
-    function setActive(link) {
-        links.forEach(el => el.classList.remove("active"));
-        link.classList.add("active");
-    }
-
 }
 
 const checkLayoutBanner = () => {
@@ -310,3 +285,58 @@ const scrollTop = () => {
         });
     });
 };
+
+const headerActive = () => {
+    var heightHeader = $("header").outerHeight();
+
+    $("#navbar .navbar-nav .nav-item .nav-link").on("click", function (event) {
+        $(this).parents("li").addClass("active");
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $("html, body").animate({
+                    scrollTop: $(hash).offset().top - heightHeader,
+                },
+                1000,
+                function () {
+                    window.location.hash = hash;
+                }
+            );
+        }
+        $("#navbar .navbar-nav .nav-item .nav-link")
+            .not(this)
+            .parent("li")
+            .removeClass("active");
+        window.addEventListener("scroll", function () {
+            var bannerheight = $("header").outerHeight();
+            if (window.pageYOffset > bannerheight) {
+                document.querySelector("header").classList.add("scrolled");
+            } else {
+                document.querySelector("header").classList.remove("scrolled");
+            }
+        });
+    });
+
+    window.addEventListener("scroll", function () {
+        var bannerheight = $("header").outerHeight();
+        if (window.pageYOffset > bannerheight) {
+            document.querySelector("header").classList.add("scrolled");
+        } else {
+            document.querySelector("header").classList.remove("scrolled");
+        }
+    });
+    const showAnim = gsap.from('header', {
+        yPercent: -100,
+        paused: true,
+        duration: 0.2
+    }).progress(1);
+
+    ScrollTrigger.create({
+        start: "top top",
+        end: 99999,
+        onUpdate: (self) => {
+            self.direction === -1 ? showAnim.play() : showAnim.reverse()
+        }
+    });
+
+}

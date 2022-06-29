@@ -1,6 +1,7 @@
 .home-3
-    padding-top: 75px
-    padding-bottom: 150px
+    background-color: #F2F2F7
+    .container
+        padding-bottom: 150px
     .wrapper-container
         max-width: 1040px
         width: 100%
@@ -47,10 +48,14 @@
                 background: url(../images/iPhone.png) 50% no-repeat
                 background-size: 100% 100%
                 overflow: hidden
-                +img-ratio(495/245)
+                +img-ratio(646/375)
                 video
-                    padding: 17px 16px
-                    border-radius: 50px
+                    border-radius: 20px
+                    top: 46%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    width: 160px
+                    height: 340px
                 button
                     position: absolute
                     width: 60px
@@ -62,6 +67,8 @@
     @media screen and ( max-width: 575.98px )
         padding-top: 15px
         padding-bottom: 60px
+        .container
+            padding-bottom: 0
         .wrapper-container
             flex-direction: column-reverse
             padding: 50px 30px

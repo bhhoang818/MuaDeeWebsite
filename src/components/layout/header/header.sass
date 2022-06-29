@@ -7,15 +7,23 @@ header
     background: #fff
     transition: ease 0.4s
     .navbar
-        padding: 47px 0
+        display: flex
+        align-items: center
+        padding: 50px 90px
         width: 100%
-        height: 156px
+        // height: 156px
+        transition: all ease-in-out .3s
+        .container
+            overflow: visible
         .navbar-collapse
             width: 100%
             justify-content: space-between
             .navbar-brand
                 width: 167px
+                height: 56px
+                transition: all ease-in-out .3s
             .navbar-nav
+                height: 56px
                 padding: 17px 24px
                 gap: 32px
                 box-sizing: border-box
@@ -23,6 +31,7 @@ header
                 border: 1px solid #D9DBE9
                 border-radius: 100px
                 flex-direction: row
+                transition: all ease-in-out .3s
 
                 .nav-item
                     position: relative
@@ -36,6 +45,14 @@ header
                         &:hover
                             .nav-link
                                 opacity: .7
+                    &.active
+                        .nav-link
+                            font-weight: 700
+                            font-size: 17px
+                            line-height: 22px
+                            letter-spacing: -0.1px
+                            color: #000000
+
                 .nav-item + .nav-item
                     &::after
                         position: absolute
@@ -49,6 +66,7 @@ header
                         background: #D9DBE9
             .nav-button
                 .suport
+                    position: relative
                     display: flex
                     align-items: center
                     justify-content: center
@@ -61,12 +79,44 @@ header
                     border-radius: 50%
                     box-sizing: border-box
                     transition: all ease-in-out .3s
+                    .tooltip
+                        position: absolute
+                        bottom: -60px
+                        padding: 6px 8px
+                        width: 229px
+                        height: 32px
+                        background: #4A4A4A
+                        border-radius: 6px
+                        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1)
+                        opacity: 0
+                        pointer-events: none
+                        font-weight: 600
+                        font-size: 15px
+                        text-align: center
+                        letter-spacing: -0.2px
+                        color: #FFFFFF
+                        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+                        &::before
+                            position: absolute
+                            content: ""
+                            height: 8px
+                            width: 8px
+                            background: #4A4A4A
+                            top: -3px
+                            left: 50%
+                            transform: translate(-50%) rotate(45deg)
+                            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
                     @media screen and ( min-width: 1025px )
                         &:hover
                             background: #000000
                             img
                                 filter: brightness(0) invert(1)
                                 transition: all ease-in-out .3s
+                            .tooltip
+                                bottom: -48px
+                                opacity: 1
+                                visibility: visible
+                                pointer-events: auto
 
                 .download-app
                     padding: 16px 24px
@@ -89,12 +139,15 @@ header
                 .partner
                     @media screen and ( min-width: 1025px )
                         display: none
-    &--scrolled
-        height: 110px
+    &.scrolled
+        .navbar
+            padding: 24px 90px
     @media screen and ( max-width: 1366.98px )
         .navbar
-            padding: 24px 0
-            height: 110px
+            padding: 24px 90px
+        &.scrolled
+            .navbar
+                padding: 16px 90px
     @media screen and ( max-width: 1024.98px )
         .navbar
             padding: 16px 0

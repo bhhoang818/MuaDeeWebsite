@@ -1,11 +1,13 @@
 .home-1
-    padding-bottom: 50px
+    padding-top: 100px
     background-image: url(../images/bg-1.jpg)
     background-repeat: no-repeat
     background-size: 80%
     background-position: top
     background-attachment: fixed
+    background-color: #F2F2F7
     .group-card
+        padding-bottom: 100px
         .card-item
             gap: 20px
             width: 615px
@@ -41,10 +43,11 @@
     @media screen and ( max-width: 1024.98px )
         padding-top: 50px
         background: none
+        background-color: #F2F2F7
         .group-card
             .card-item
                 width: 100%
-                height: 400px
+                height: auto
                 padding: 40px 30px
                 border-radius: 20px
                 box-shadow: unset
@@ -63,3 +66,7 @@
                         p
                             font-size: 20px
                             line-height: 24px
+    @media screen and ( max-width: 575.98px )
+        .group-card
+            .card-item
+                height: 400px

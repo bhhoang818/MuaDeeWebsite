@@ -18,11 +18,10 @@ html(lang="en")
 	body(class=bodyClass )
 		block header
 			include ../components/layout/header/header.pug
-		main
-			.body-container-wrapper
-				.body-scrollable-area
-					block main
-					block footer
+		main.body-container-wrapper
+			.body-scrollable-area
+				block main
+				block footer
 			#back-to-top 
 				em.material-icons arrow_upward
 		#overlay

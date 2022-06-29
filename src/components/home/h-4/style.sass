@@ -11,23 +11,24 @@
         .wrapper-grid
             display: flex
             align-items: center
-            gap: 30px
             overscroll-behavior: none
             width: 300%
-            height: 100vh !important
-            flex-wrap: nowrap
             .panels
-                flex: 0 0 810px
+                flex: 0 0 1008px
+                width: 100%
+                height: 900px
                 display: flex
                 flex-direction: column
                 padding: 0px
                 background: #FFFFFF
                 border-radius: 40px
+                margin-left: 32px
                 .img
                     width: 100%
                     +img-ratio(606/1008)
                     img
                         border-radius: 40px 40px 0 0
+
                 .content
                     padding: 50px 100px 50px
                     width: 600px
@@ -38,8 +39,11 @@
                         letter-spacing: -0.6px
                         color: #000000
                 &:first-child
+                    width: 772px
                     background: none
                     align-items: flex-start
+                    margin-right: 0
+                    margin-left: 0
                     .content
                         width: 675px
                         padding: 0
@@ -49,6 +53,9 @@
                             font-size: 56px
                             letter-spacing: -0.15px
                             color: #000000
+                            margin-bottom: 73px
+                &:nth-child(2)
+                    margin-left: 0
     @media screen and ( max-width: 1024.98px )
         .wrapper-container
             padding: 56px 20px
@@ -58,6 +65,8 @@
                 flex-wrap: wrap
                 .panels
                     flex: 0 0 100%
+                    height: auto
+                    margin-left: 0
                     .hero-title
                         margin-bottom: 24px
                         text-align: center
@@ -65,7 +74,7 @@
                         padding: 50px 30px
 
                     &:first-child
-                        justify-content: center
+                        justify-content: flex-start
                         align-items: center
                         .content
                             width: 100%
@@ -75,6 +84,8 @@
 
                             .btn-default
                                 margin: 0 auto
+                .panels + .panels
+                    margin-top: 30px
     @media screen and ( max-width: 768.98px )
         .wrapper-container
             padding: 30px 20px
