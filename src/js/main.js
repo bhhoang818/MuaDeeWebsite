@@ -10,11 +10,8 @@ $(document).ready(() => {
                 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                     vid.currentTime = 1.2;
                     vid.play();
-
-                } else {
-                    if (entry.isIntersecting) {
-                        vid.play();
-                    }
+                } else if (entry.isIntersecting) {
+                    vid.pause();
                 }
             });
         });
@@ -32,7 +29,7 @@ const initSplide = () => {
             rows: 2,
             fill: 'row',
         },
-        spaceBetween: 30,
+        spaceBetween: 16,
         navigation: {
             nextEl: ".button-swiper .swiper-button-next",
             prevEl: ".button-swiper  .swiper-button-prev",
@@ -40,7 +37,7 @@ const initSplide = () => {
         breakpoints: {
             320: {
                 slidesPerView: 1,
-                spaceBetween: 24,
+                spaceBetween: 16,
             },
             768: {
                 slidesPerView: 2,

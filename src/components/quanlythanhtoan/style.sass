@@ -8,6 +8,7 @@
 .payment-panel
     background: #fff
     padding-top: 80px
+    padding-bottom: 80px
     .wrapper-container
         padding: 0px 90px
         max-width: 1040px
@@ -39,12 +40,19 @@
                     font-size: 28px
                     letter-spacing: 0.5px
                     color: #000000
+                p
+                    font-weight: 400
+                    font-size: 17px
+                    line-height: 24px
+                    letter-spacing: -0.4px
+                    color: #000000
+
             &::before
                 position: absolute
                 bottom: -30px
                 left: 50%
                 transform: translateX(-50%)
-                max-width: 760px
+                width: 760px
                 height: 30px
                 display: flex
                 flex-direction: column
@@ -58,7 +66,7 @@
                 bottom: -50px
                 left: 50%
                 transform: translateX(-50%)
-                max-width: 660px
+                width: 660px
                 height: 20px
                 display: flex
                 flex-direction: column
@@ -95,6 +103,7 @@
                             font-size: 24px
                             letter-spacing: 0.5px
                             color: #000000
+                            font-family: 'SF Pro Display'
                     &__img
                         margin-left: auto
                     &:hover
@@ -104,7 +113,7 @@
             .swiper-container
                 position: relative
                 .button-swiper
-                    bottom: -100px
+                    bottom: -80px
     @media screen and ( max-width: 575.98px )
         padding-top: 40px
         .wrapper-container
