@@ -168,7 +168,6 @@ const gsapInit = () => {
 
         /* Panels */
         let container = document.getElementsByClassName("panels-container");
-        console.log(container);
         gsap.to(container, {
             x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
             ease: "none",
@@ -303,7 +302,9 @@ const headerActive = () => {
             .parent("li")
             .removeClass("active");
         window.addEventListener("scroll", function () {
-            var bannerheight = $("header").outerHeight();
+            var headerheight = $("header").outerHeight();
+            var bannerheight = $("#hero-banner").outerHeight();
+            console.log(bannerheight);
             if (window.pageYOffset > bannerheight) {
                 document.querySelector("header").classList.add("scrolled");
             } else {
@@ -313,24 +314,11 @@ const headerActive = () => {
     });
 
     window.addEventListener("scroll", function () {
-        var bannerheight = $("header").outerHeight();
+        var bannerheight = $("#hero-banner").outerHeight();
         if (window.pageYOffset > bannerheight) {
             document.querySelector("header").classList.add("scrolled");
         } else {
             document.querySelector("header").classList.remove("scrolled");
-        }
-    });
-    const showAnim = gsap.from('header', {
-        yPercent: -100,
-        paused: true,
-        duration: 0.2
-    }).progress(1);
-
-    ScrollTrigger.create({
-        start: "top top",
-        end: 99999,
-        onUpdate: (self) => {
-            self.direction === -1 ? showAnim.play() : showAnim.reverse()
         }
     });
 
