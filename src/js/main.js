@@ -167,21 +167,19 @@ const gsapInit = () => {
         });
 
         /* Panels */
-        let gridItem = gsap.utils.toArray(".panels-container .grid-item");
-
-        gsap.to(gridItem, {
-            xPercent: -100 * (gridItem.length - 1),
+        let container = document.getElementsByClassName("panels-container");
+        console.log(container);
+        gsap.to(container, {
+            x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
             ease: "none",
             scrollTrigger: {
-                trigger: ".panels-container",
+                trigger: container,
+                invalidateOnRefresh: true,
                 pin: true,
                 scrub: 1,
-                snap: 1 / (gridItem.length - 1),
-                end: () => "+=" + document.querySelector(".panels-container").offsetWidth
+                end: () => "+=" + container.offsetWidth
             }
-        });
-
-
+        })
 
     } else {
         function animateFrom(elem, direction) {
