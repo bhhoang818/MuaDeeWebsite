@@ -1,31 +1,30 @@
 .home-4
     background: #E8ECFF
-    border-radius: 0px
-    width: 100vw
+    overflow: hidden
     .wrapper-container
-        padding: 56px 0
-        overflow: hidden
+        position: relative
         max-width: 1040px
         width: 100%
         margin: 0 auto
+        padding-top: 0
+        overflow-x: hidden
         .wrapper-grid
             display: flex
             align-items: center
             overscroll-behavior: none
-            width: 300%
+            height: 100vh
             .panels
                 flex: 0 0 1008px
-                width: 100%
-                height: 900px
+                height: calc( 100vh - 56px )
                 display: flex
                 flex-direction: column
                 padding: 0px
                 background: #FFFFFF
                 border-radius: 40px
-                margin-left: 32px
+                margin-left: 30px
                 .img
                     width: 100%
-                    +img-ratio(606/1008)
+                    +img-ratio(485/864)
                     img
                         border-radius: 40px 40px 0 0
 
@@ -39,10 +38,9 @@
                         letter-spacing: -0.6px
                         color: #000000
                 &:first-child
-                    width: 772px
                     background: none
                     align-items: flex-start
-                    margin-right: 0
+                    justify-content: center
                     margin-left: 0
                     .content
                         width: 675px

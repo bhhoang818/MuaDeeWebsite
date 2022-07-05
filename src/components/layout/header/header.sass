@@ -39,6 +39,7 @@ header
                         font-weight: 400
                         font-size: 17px
                         letter-spacing: -0.4px
+                        line-height: 25px
                         color: #000000
                         transition: all ease-in-out .3s
                     @media screen and ( min-width: 1025px )
@@ -83,7 +84,7 @@ header
                         position: absolute
                         bottom: -60px
                         padding: 6px 8px
-                        width: 229px
+                        width: max-content
                         height: 32px
                         background: #4A4A4A
                         border-radius: 6px
@@ -117,6 +118,10 @@ header
                                 opacity: 1
                                 visibility: visible
                                 pointer-events: auto
+                    @media screen and ( max-width: 575.98px )
+                        padding: 0 16px
+                        width: auto
+                        height: auto
 
                 .download-app
                     padding: 16px 24px
@@ -139,7 +144,7 @@ header
                 .partner
                     @media screen and ( min-width: 1025px )
                         display: none
-    &.scrolled
+    &.main-tool-bar--scrolled
         .navbar
             padding: 24px 90px
     @media screen and ( max-width: 1366.98px )
@@ -173,6 +178,8 @@ header
                         text-decoration-line: underline
                         color: #000000
     @media screen and ( max-width: 575.98px )
-        &.scrolled
+        .navbar
+            padding: 24px 0
+        &.main-tool-bar--scrolled
             .navbar
-                padding: 24px 0
+                padding: 16px 0

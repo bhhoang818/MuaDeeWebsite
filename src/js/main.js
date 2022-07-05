@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    bannerHome();
     initSplide();
     gsapInit();
     checkLayoutBanner();
@@ -19,9 +20,26 @@ $(document).ready(() => {
 
     }
     headerActive();
-
+    navActive();
+    parallaxBackground();
 })
-
+const bannerHome = () => {
+    if ($(window).width() >= 1025 && $('#hero-banner').length >= 1) {
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+        let sections = gsap.utils.toArray(".banner-item");
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".bannerSwiper",
+                pin: true,
+                scrub: 0.2,
+                snap: 1 / (sections.length - 1),
+                end: () => "+=" + document.querySelector(".bannerSwiper").offsetWidth
+            }
+        });
+    }
+}
 const initSplide = () => {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -87,31 +105,6 @@ const gsapInit = () => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
     if ($(window).width() >= 1025 && $('#hero-banner').length >= 1) {
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
-
-        let sections = gsap.utils.toArray(".banner-item");
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".bannerSwiper",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (sections.length - 1),
-                end: () => "+=" + document.querySelector(".bannerSwiper").offsetWidth
-            }
-        });
-
-
-        let smoother = ScrollSmoother.create({
-            wrapper: '.body-container-wrapper',
-            content: '.body-scrollable-area',
-            smooth: .8,
-            effects: true
-        });
-        smoother.scrollTop(window.pageYOffset);
-        window.history.scrollRestoration = "auto";
-
 
         function animateFrom(elem, direction) {
             direction = direction || 1;
@@ -167,18 +160,19 @@ const gsapInit = () => {
         });
 
         /* Panels */
-        let container = document.getElementsByClassName("panels-container");
-        gsap.to(container, {
-            x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+        let panel = gsap.utils.toArray(".panels");
+
+        gsap.to(panel, {
+            xPercent: -100 * (panel.length - 1),
             ease: "none",
             scrollTrigger: {
-                trigger: container,
-                invalidateOnRefresh: true,
+                start: 'top -80',
+                trigger: ".panels-container",
                 pin: true,
                 scrub: 1,
-                end: () => "+=" + container.offsetWidth
+                end: () => "+=" + document.querySelector(".panels-container").offsetWidth
             }
-        })
+        });
 
     } else {
         function animateFrom(elem, direction) {
@@ -237,13 +231,21 @@ const gsapInit = () => {
 
         });
     }
+    let smoother = ScrollSmoother.create({
+        wrapper: '.body-container-wrapper',
+        content: '.body-scrollable-area',
+        smooth: 1.8,
+        effects: true
+    });
+    smoother.scrollTop(window.pageYOffset);
+    window.history.scrollRestoration = "auto";
 }
 
 const checkLayoutBanner = () => {
     const heightHeader = $("header").outerHeight();
     const mainBanner = $("#hero-banner");
-    if (mainBanner.length >= 1) {
-        $(".body-container-wrapper").css("padding-top", 0);
+    if (mainBanner.length >= 1 && $(window).width() >= 992) {
+        $(".body-container-wrapper").css("padding-top", heightHeader);
     } else {
         $(".body-container-wrapper").css("padding-top", heightHeader);
     }
@@ -251,14 +253,12 @@ const checkLayoutBanner = () => {
 const jumpSection = () => {
     if ($(window).width() >= 1025) {
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray(".jump-section").forEach((panel, i) => {
-            ScrollTrigger.create({
-                trigger: panel,
-                start: "top top",
-                pin: true,
-                pinSpacing: false
-            });
+        ScrollTrigger.create({
+            trigger: ".home-6 .wrapper-container",
+            start: "-40 top",
+            end: "bottom top",
+            pin: true,
+            pinSpacing: false,
         });
     }
 }
@@ -281,45 +281,91 @@ const scrollTop = () => {
 };
 
 const headerActive = () => {
-    var heightHeader = $("header").outerHeight();
+    const showAnim = gsap.from('.main-tool-bar', {
+        yPercent: -100,
+        paused: true,
+        duration: 0.2
+    }).progress(1);
 
-    $("#navbar .navbar-nav .nav-item .nav-link").on("click", function (event) {
-        $(this).parents("li").addClass("active");
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $("html, body").animate({
-                    scrollTop: $(hash).offset().top - heightHeader,
-                },
-                1000,
-                function () {
-                    window.location.hash = hash;
-                }
-            );
+    ScrollTrigger.create({
+        start: "top -6000",
+        end: 99999,
+        onUpdate: (self) => {
+            self.direction === -1 ? showAnim.play() : showAnim.reverse()
         }
-        $("#navbar .navbar-nav .nav-item .nav-link")
-            .not(this)
-            .parent("li")
-            .removeClass("active");
-        window.addEventListener("scroll", function () {
-            var headerheight = $("header").outerHeight();
-            var bannerheight = $("#hero-banner").outerHeight();
-            console.log(bannerheight);
-            if (window.pageYOffset > bannerheight) {
-                document.querySelector("header").classList.add("scrolled");
-            } else {
-                document.querySelector("header").classList.remove("scrolled");
+    });
+    ScrollTrigger.create({
+        start: 'top -150',
+        end: 99999,
+        toggleClass: {
+            className: 'main-tool-bar--scrolled',
+            targets: '.main-tool-bar'
+        }
+    });
+}
+const navActive = () => {
+    $('[data-toggle]').on('click', function (event) {
+        event.preventDefault();
+        var target = $(this.hash);
+        target.toggle();
+    });
+
+    var lastId,
+        topMenu = $(".navbar-nav"),
+        topMenuHeight = topMenu.outerHeight(),
+        menuItems = topMenu.find("a"),
+        scrollItems = menuItems.map(function () {
+            var item = $(this).attr("href");
+            if (item != '#') {
+                return $(item)
             }
         });
+
+    console.log(scrollItems)
+
+
+    menuItems.click(function (e) {
+        var href = $(this).attr("href"),
+            offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+        $('html, body').stop().animate({
+            scrollTop: offsetTop
+        }, 300);
+        e.preventDefault();
     });
 
-    window.addEventListener("scroll", function () {
-        var bannerheight = $("#hero-banner").outerHeight();
-        if (window.pageYOffset > bannerheight) {
-            document.querySelector("header").classList.add("scrolled");
-        } else {
-            document.querySelector("header").classList.remove("scrolled");
+    $(window).scroll(function () {
+        var fromTop = $(this).scrollTop() + topMenuHeight;
+
+        var cur = scrollItems.map(function () {
+            if ($(this).offset().top < fromTop)
+                return this;
+        });
+        cur = cur[cur.length - 1];
+        var id = cur && cur.length ? cur[0].id : "";
+
+        if (lastId !== id) {
+            lastId = id;
+            menuItems
+                .parent().removeClass("active")
+                .end().filter("[href='#" + id + "']").parent().addClass("active");
         }
     });
+}
+const parallaxBackground = () => {
+    if ($(window).width() >= 1025) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+            trigger: ".bg",
+            start: "top top",
+            end: "bottom top",
+            pin: true,
+            pinSpacing: false,
+            toggleClass: {
+                targets: ".bg",
+                className: "active"
+            }
+        });
+
+    }
 
 }

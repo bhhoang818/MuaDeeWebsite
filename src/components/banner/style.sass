@@ -5,29 +5,38 @@
     border-radius: 50px 50px 0px 0px
     .bannerSwiper
         width: 300%
-        height: 100vh
+        height: 100vh!important
         max-height: 100% !important
         overflow: hidden
         display: flex
         flex-wrap: nowrap
         align-items: center
         .slide-inner
+            position: relative
             width: 100%
             height: 100%
-            padding-top: 156px
             display: flex
             align-items: center
             justify-content: space-between
+            margin: 0 auto
             &__img
-                width: 824px
-                a
-                    +img-ratio(860/824)
-            &__content
+                position: absolute
+                top: 50%
+                right: -80px
+                transform: translateY(-50%)
                 flex: 0 0 50%
-                width: 50%
+                width: 40%
+                a
+                    +img-ratio(780/824)
+            &__content
                 padding-left: 200px
+                position: absolute
+                top: 50%
+                left: 0
+                transform: translateY(-50%)
                 .banner-desc
                     .big-txt
+                        font-family: 'SF Pro Display'
                         font-weight: 700
                         font-size: 80px
                         line-height: 95px
@@ -35,7 +44,7 @@
                         color: #000000
 
                     .small-txt
-                        padding-top: 20px
+                        margin-top: 25px
                         font-family: 'SF Pro Display'
                         font-size: 24px
                         letter-spacing: 0.5px
@@ -64,10 +73,9 @@
         @media screen and ( max-width: 1366.98px )
             padding-top: 0 !important
             .slide-inner
-                padding-top: 110px
                 &__img
-                    width: 650px
                     a
+                        max-width: 680px
                         +img-ratio(620/680)
                 &__content
                     padding-left: 150px
@@ -89,6 +97,8 @@
             padding-top: 0
             height: auto
             &__content
+                position: static
+                transform: unset
                 padding: 0 100px
                 flex: 0 0 60%
                 width: 60%
@@ -137,15 +147,21 @@
                         color: #000000
 
             &__img
-                width: 367px
+                flex: unset
+                transform: unset
+                right: auto
+                position: static
+                width: 100%
                 margin-bottom: 90px
                 a
                     +img-ratio(384/367)
         .button-swiper
             z-index: 999
-            top: 40%
+            top: 90%
             left: 50%
             transform: translate(-50%, -50%)
+            @media screen and ( max-width: 575.98px )
+                top: 50%
         @media screen and ( min-width: 1025px )
             display: none
     @media screen and ( max-width: 1024.98px )
@@ -153,6 +169,7 @@
         .banner-desktop
             display: none
     @media screen and ( max-width: 575.98px )
+        padding-top: 0
         .banner-mobile
             padding-bottom: 60px
             .slide-inner
@@ -163,5 +180,3 @@
                     flex: unset
                     width: 100%
                     padding: 0 20px
-            .button-swiper
-                top: 47%
