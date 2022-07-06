@@ -52,6 +52,10 @@
                     background: #F7C913
                     border-radius: 32px
                     margin: 0 auto
+                    transition: all ease-in-out .3s
+                    @media screen and ( min-width: 1025px )
+                        &:hover
+                            background: #D1A300
     @media screen and ( max-width: 1024.98px )
         .wrapper-container
             padding: 50px 24px
@@ -77,13 +81,11 @@
                                 line-height: 24px
                     .btn-default
                         width: 100%
-.sticky-section
-    width: 100vw
+.md-sticky
+    position: relative
+    padding: 0 40px
     background: #F2F2F7
-    padding: 40px
-    .md-sticky
-        position: relative
     .footer
         margin-top: -50px
     @media screen and ( max-width: 575.98px )
-        padding: 20px
+        padding: 0 20px

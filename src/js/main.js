@@ -251,11 +251,11 @@ const checkLayoutBanner = () => {
     }
 };
 const jumpSection = () => {
-    if ($(window).width() >= 1025) {
+    if ($(window).width() >= 1025 && $('#hero-banner').length >= 1) {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
             trigger: ".home-6 .wrapper-container",
-            start: "-40 top",
+            start: "+40 top",
             end: "bottom top",
             pin: true,
             pinSpacing: false,
@@ -281,78 +281,83 @@ const scrollTop = () => {
 };
 
 const headerActive = () => {
-    const showAnim = gsap.from('.main-tool-bar', {
-        yPercent: -100,
-        paused: true,
-        duration: 0.2
-    }).progress(1);
+    if ($('#hero-banner').length >= 1) {
+        const showAnim = gsap.from('.main-tool-bar', {
+            yPercent: -100,
+            paused: true,
+            duration: 0.2
+        }).progress(1);
 
-    ScrollTrigger.create({
-        start: "top -6000",
-        end: 99999,
-        onUpdate: (self) => {
-            self.direction === -1 ? showAnim.play() : showAnim.reverse()
-        }
-    });
-    ScrollTrigger.create({
-        start: 'top -150',
-        end: 99999,
-        toggleClass: {
-            className: 'main-tool-bar--scrolled',
-            targets: '.main-tool-bar'
-        }
-    });
-}
-const navActive = () => {
-    $('[data-toggle]').on('click', function (event) {
-        event.preventDefault();
-        var target = $(this.hash);
-        target.toggle();
-    });
-
-    var lastId,
-        topMenu = $(".navbar-nav"),
-        topMenuHeight = topMenu.outerHeight(),
-        menuItems = topMenu.find("a"),
-        scrollItems = menuItems.map(function () {
-            var item = $(this).attr("href");
-            if (item != '#') {
-                return $(item)
+        ScrollTrigger.create({
+            start: "top -6000",
+            end: 99999,
+            onUpdate: (self) => {
+                self.direction === -1 ? showAnim.play() : showAnim.reverse()
             }
         });
-
-    console.log(scrollItems)
-
-
-    menuItems.click(function (e) {
-        var href = $(this).attr("href"),
-            offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-        $('html, body').stop().animate({
-            scrollTop: offsetTop
-        }, 300);
-        e.preventDefault();
-    });
-
-    $(window).scroll(function () {
-        var fromTop = $(this).scrollTop() + topMenuHeight;
-
-        var cur = scrollItems.map(function () {
-            if ($(this).offset().top < fromTop)
-                return this;
+        ScrollTrigger.create({
+            start: 'top -150',
+            end: 99999,
+            toggleClass: {
+                className: 'main-tool-bar--scrolled',
+                targets: '.main-tool-bar'
+            }
         });
-        cur = cur[cur.length - 1];
-        var id = cur && cur.length ? cur[0].id : "";
+    }
+}
+const navActive = () => {
+    if ($('#hero-banner').length >= 1) {
+        $('[data-toggle]').on('click', function (event) {
+            event.preventDefault();
+            var target = $(this.hash);
+            target.toggle();
+        });
 
-        if (lastId !== id) {
-            lastId = id;
-            menuItems
-                .parent().removeClass("active")
-                .end().filter("[href='#" + id + "']").parent().addClass("active");
-        }
-    });
+        var lastId,
+            topMenu = $(".navbar-nav"),
+            topMenuHeight = topMenu.outerHeight(),
+            menuItems = topMenu.find("a"),
+            scrollItems = menuItems.map(function () {
+                var item = $(this).attr("href");
+                if (item != '#') {
+                    return $(item)
+                }
+            });
+
+        console.log(scrollItems)
+
+
+        menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+                offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight - 1;
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 300);
+            e.preventDefault();
+        });
+
+        $(window).scroll(function () {
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            var cur = scrollItems.map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+                lastId = id;
+                menuItems
+                    .parent().removeClass("active")
+                    .end().filter("[href='#" + id + "']").parent().addClass("active");
+            }
+        });
+    }
+
 }
 const parallaxBackground = () => {
-    if ($(window).width() >= 1025) {
+    if ($(window).width() >= 1025 && $('#hero-banner').length >= 1) {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
             trigger: ".bg",

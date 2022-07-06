@@ -51,10 +51,19 @@
                         .btn-default
                             width: 300px
                             border: 2px solid #FFFFFF
+                            transition: all .3s
                             p
                                 color: #fff
                             img
                                 filter: brightness(0) invert(1)
+                            @media screen and ( min-width: 1025px )
+                                &:hover
+                                    border: 2px solid transparent
+                                    background: #fff
+                                    p
+                                        color: #000
+                                    img
+                                        filter: brightness(1) invert(0)
             .wrap-right
                 padding-left: 8px
                 .grid-item
