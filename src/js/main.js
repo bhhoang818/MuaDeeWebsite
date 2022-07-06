@@ -303,6 +303,15 @@ const headerActive = () => {
                 targets: '.main-tool-bar'
             }
         });
+    } else {
+        ScrollTrigger.create({
+            start: 'top -150',
+            end: 99999,
+            toggleClass: {
+                className: 'main-tool-bar--scrolled',
+                targets: '.main-tool-bar'
+            }
+        });
     }
 }
 const navActive = () => {
